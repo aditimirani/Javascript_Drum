@@ -34,15 +34,15 @@
       <span class='sound'>ride</span>
     </div>
     <div data-keys='74' class='key'>
-      <kbd>H</kbd>
+      <kbd>J</kbd>
       <span class='sound'>snare</span>
     </div>
     <div data-keys='75' class='key'>
-      <kbd>H</kbd>
+      <kbd>K</kbd>
       <span class='sound'>tom</span>
     </div>
     <div data-keys='76' class='key'>
-      <kbd>H</kbd>
+      <kbd>L</kbd>
       <span class='sound'>tink</span>
     </div>
   </div>
@@ -58,7 +58,9 @@
 
   <script>
     window.addEventListener('keydown' , function(e){
-      
+      var audio = document.querySelector(`audio[data-key='${e.keyCode}']`)
+      if(!audio) return // stop the function for running all together
+      audio.play();
     })
   </script>
 </body>
